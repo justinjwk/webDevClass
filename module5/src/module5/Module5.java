@@ -41,6 +41,8 @@ public class Module5 extends JFrame implements ActionListener {
     JButton tour3;
     JButton calculateButton = new JButton("Calculate");;
     JButton verifyDateButton = new JButton("Verify Date");
+    
+    JComboBox durationList;
 
     JLabel title = new JLabel ("Welcome to Beartooth Hiking Compnay", JLabel.CENTER);
     String[] tourListString = {"Gardiner Lake", "Hellroaring Plateau", "BeatenPath"};
@@ -113,7 +115,7 @@ public class Module5 extends JFrame implements ActionListener {
         tour3.addActionListener(this);
         
         // Duration selection
-        JComboBox durationList = new JComboBox(durationListString);
+        durationList = new JComboBox(durationListString);
         durationList.setSelectedIndex(0);
         selectDurationPanel.setBorder(BorderFactory.createTitledBorder("Select Duration"));
         selectDurationPanel.add(durationList);
@@ -174,30 +176,58 @@ public class Module5 extends JFrame implements ActionListener {
             }
         }
         else if (event.getSource() == tour1) {
-            durationListString = new String[] {"3 days", "5 days"};
+            durationListString = new String[] {"Select Days", "3 days", "5 days"};
+            durationList.removeAllItems();
+            DefaultComboBoxModel model = new DefaultComboBoxModel(durationListString);
+            durationList.setModel(model);
+            durationList.setSelectedIndex(0);
             
             rate = new Rates(HIKE.GARDINER);
             
-            revalidate();
-            repaint();
         }
         
         else if (event.getSource() == tour2) {
-            durationListString = new String[] {"2 days", "3 days", "4 days"};
+            durationListString = new String[] {"Select Days", "2 days", "3 days", "4 days"};
+            durationList.removeAllItems();
+            DefaultComboBoxModel model = new DefaultComboBoxModel(durationListString);
+            durationList.setModel(model);
+            durationList.setSelectedIndex(0);
             
             rate = new Rates(HIKE.HELLROARING);
-            
-            revalidate();
-            repaint();
         }
         
         else if (event.getSource() == tour3) {
-            durationListString = new String[] {"5 days", "7 days"};
+            durationListString = new String[] {"Select Days", "5 days", "7 days"};
+            durationList.removeAllItems();
+            DefaultComboBoxModel model = new DefaultComboBoxModel(durationListString);
+            durationList.setModel(model);
+            durationList.setSelectedIndex(0);
             
             rate = new Rates(HIKE.BEATEN);
-            
-            revalidate();
-            repaint();
+
+        }
+        
+        else if (event.getSource() == durationList) {
+            System.out.println(durationList.getSelectedItem());
+//            if (durationList.getSelectedItem().toString().equals("2 days")) {
+//                rate.setDuration(2);
+//            }
+//            else if (durationList.getSelectedItem().toString().equals("3 days")) {
+//                rate.setDuration(3);
+//            }
+//            else if (durationList.getSelectedItem().toString().equals("4 days")) {
+//                rate.setDuration(4);
+//            }
+//            else if (durationList.getSelectedItem().toString().equals("5 days")) {
+//                rate.setDuration(5);
+//            }
+//            else if (durationList.getSelectedItem().toString().equals("7 days")) {
+//                rate.setDuration(7);
+//            }
+//            else {
+//                rate.setDuration(0);
+//            }
+                
         }
         
         else if (event.getSource() == calculateButton) {

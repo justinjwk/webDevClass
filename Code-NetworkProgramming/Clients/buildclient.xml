@@ -1,0 +1,38 @@
+<project name="LectureCode" default="compile" basedir=".">
+	<description>
+		Ant script for 605.481 lecture code
+	</description>
+	
+	<!-- Set properties used for project -->
+	<property name="src" location="${basedir}"/>
+	<property name="classes" location="${basedir}/classes"/>
+	<property name="imagedest" location="${classes}/images"/>
+	
+	<!-- Make sure classes directory exists for compiling -->
+	<target name="init">
+		<mkdir dir="${classes}"/>
+		<mkdir dir="${imagedest}"/>
+		<copy todir="${imagedest}">
+		  <fileset dir="${basedir}/images"/>
+		</copy>
+	</target>
+	
+	<!-- Now compile all java source files in directory -->
+	<target name="compile" depends="init">
+		<javac srcdir="${src}" destdir="${classes}"/>
+	</target>
+	
+	<!-- Provide ability to run specific classes -->
+	<target name="execute" depends="compile">
+		<java classname="${mainClass}">
+			<classpath>
+				<pathelement path="${classes}"/>
+			</classpath>
+		</java>
+	</target>
+	
+	<!-- Option to remove class files for -->
+	<target name="clean">
+		<delete dir="${classes}"/>
+	</target>
+</project>
