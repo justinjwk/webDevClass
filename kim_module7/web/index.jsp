@@ -22,6 +22,10 @@
                 padding: 5px;
                 text-align: top, left;
             }
+            h2 {
+                text-align: center;
+                color: red;
+            }
 
         </style>            
     </head>
