@@ -25,9 +25,9 @@ public class Main {
         ServerSocket serverSocket = null;
         
         try {
-            serverSocket = new ServerSocket(8889);
+            serverSocket = new ServerSocket(20006);
         } catch (IOException e) {
-            System.err.println("Could not listen on port: 8889.");
+            System.err.println("Could not listen on port: 20006.");
             System.exit(1);
         }
 

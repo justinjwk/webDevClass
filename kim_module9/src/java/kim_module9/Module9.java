@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author Justin
  */
 @WebServlet(name = "Module9", urlPatterns = {"/Module9"})
-public class Module9 extends HttpServlet {
+public class Module9 extends HttpServlet implements Runnable {
 
     String yearString;
     String monthString;
@@ -307,4 +307,8 @@ public class Module9 extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
+    
+    public void run() {
+        
+    }
 }
