@@ -50,8 +50,8 @@ public class Module6 extends JFrame implements ActionListener {
     String[] tourListString = {"Gardiner Lake", "Hellroaring Plateau", "Beaten Path"};
     String[] durationListString = {"Select Tour First"};
     
-    final String CLASS_COM_URL = "web6.jhuep.com";
-    final int CLASS_COM_PORT = 20025;
+    final String CLASS_COM_URL = "localhost";
+    final int CLASS_COM_PORT = 20006;
 
     public Module6() {
 

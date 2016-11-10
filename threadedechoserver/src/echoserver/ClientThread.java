@@ -33,7 +33,7 @@ public class ClientThread extends Thread {
         try {
             out = new PrintWriter(socket.getOutputStream(), true);
             in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-            out.println("Welcome to en605481 echo server\n\rType \"bye\" to disconnect\n\r");
+            out.println("Welcome to Beartooth Hiking Company Server\n\rType \"bye\" to disconnect\n\r");
             String outputLine = null;
             while (!socket.isClosed()) {
                 outputLine = in.readLine();
@@ -43,7 +43,10 @@ public class ClientThread extends Thread {
                 if (outputLine.equalsIgnoreCase("bye")) {
                     break;
                 } else {
-                    out.println("Echo: " + outputLine);
+                    String inputs[] = outputLine.split(":");
+                    if(inputs.length != 5) {
+                        System.out.println("Input should have 5 values like begin_year:begin_month:begin_day:hike:duration");
+                    }
                 }
             }
         } catch (IOException ex) {
