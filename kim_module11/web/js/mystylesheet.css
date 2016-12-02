@@ -1,0 +1,90 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 28, 2016, 5:35:54 PM
+    Author     : justinkim
+*/
+
+@charset "utf-8";
+/* CSS Document */
+.Normal {font-size: large}
+.NormalBlue {font-size: large; color: #0000FF}
+.NormalBold {font-size: large; font-weight: bold; }
+.NormalItalic {font-size: large; font-style: italic; }
+
+h1 {text-align: center; font-weight: bold; background: #000000; color: #00FF00}
+h2 {text-align: center; color: #0000FF}
+p.style1 {font-size: large}
+.style2 {font-size: xx-large; font-weight: bold; }
+.Courier {font-family: "Courier New", Courier, mono}
+.Font12pt {font-size: 12pt}
+
+li {font-size: 15px}
+
+table {
+        border: 1px solid black;
+        border-spacing: 1px;
+}
+th {text-align: center;}
+td {
+    padding: 5px;
+    text-align: top, left;
+}
+h2 {
+    text-align: center;
+    color: red;
+}
+
+body {
+
+	font: 100% Verdana, Arial, Helvetica, sans-serif;
+	background: #FFFFFF;
+	margin: 0; 
+	padding: 0;
+	text-align: center; 
+	color: #000000;
+
+}
+
+.main #top {
+	background: #EAECEE; 
+	padding: 15px 10px 15px 20px;
+	
+ }
+  
+.main #middle {
+	background: #FEF9E7; 
+	padding: 15px 10px 15px 20px;
+	
+ }
+  
+.main #bottom {
+	background: #D6EAF8; 
+	padding: 15px 10px 15px 20px;
+	
+ }
+
+#banner {
+  background: #EAECEE; 
+  height: 180px;
+  width: 800px;
+  position: relative;
+}
+#bannerImg {
+  position: relative;
+  left: 0;
+  top: 0;
+}
+#bannerText {
+  background: #000000; 
+  z-index: 100;
+  position: absolute;
+  color: white;
+  font-size: 26px;
+  font-weight: bold;
+  left: 120px;
+  top: 10px;
+}
